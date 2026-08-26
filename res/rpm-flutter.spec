@@ -59,7 +59,7 @@ esac
 cp /usr/share/rustdesk/files/rustdesk.service /etc/systemd/system/rustdesk.service
 cp /usr/share/rustdesk/files/rustdesk.desktop /usr/share/applications/
 cp /usr/share/rustdesk/files/rustdesk-link.desktop /usr/share/applications/
-ln -sf /usr/share/rustdesk/rustdesk /usr/bin/rustdesk
+ln -sf /usr/share/zoltan151/rustdesk /usr/bin/rustdesk
 systemctl daemon-reload
 systemctl enable rustdesk
 systemctl start rustdesk

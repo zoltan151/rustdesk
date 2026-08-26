@@ -1425,7 +1425,7 @@ impl<T: InvokeUiSession> Remote<T> {
                                 }
                             }
                             // to-do: Android, is `sync_init_clipboard` really needed?
-                            // https://github.com/rustdesk/rustdesk/discussions/9010
+                            // https://github.com/zoltan151/rustdesk/discussions/9010
 
                             #[cfg(feature = "flutter")]
                             #[cfg(not(target_os = "ios"))]
@@ -1791,7 +1791,7 @@ impl<T: InvokeUiSession> Remote<T> {
                     }
                     Some(misc::Union::PermissionInfo(p)) => {
                         log::info!("Change permission {:?} -> {}", p.permission, p.enabled);
-                        // https://github.com/rustdesk/rustdesk/issues/3703#issuecomment-1474734754
+                        // https://github.com/zoltan151/rustdesk/issues/3703#issuecomment-1474734754
                         match p.permission.enum_value() {
                             Ok(Permission::Keyboard) => {
                                 *self.handler.server_keyboard_enabled.write().unwrap() = p.enabled;

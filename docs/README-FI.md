@@ -13,11 +13,11 @@ Juttele meidän kanssa: [Discord](https://discord.gg/nDceKgxnkV) | [Twitter](htt
 
 [![RustDesk Server Pro](https://img.shields.io/badge/RustDesk%20Server%20Pro-Edistyneet%20Ominaisuudet-blue)](https://rustdesk.com/pricing.html)
 
-Vielä yksi etätyöpöytäohjelmisto, ohjelmoitu Rust-kielellä. Toimii suoraan pakkauksesta, ei tarvitse asetusta. Hallitset täysin tietojasi, ei tarvitse murehtia turvallisuutta. Voit käyttää meidän rendezvous/relay-palvelinta, [aseta omasi](https://rustdesk.com/server), tai [kirjoittaa oma rendezvous/relay-palvelin](https://github.com/rustdesk/rustdesk-server-demo).
+Vielä yksi etätyöpöytäohjelmisto, ohjelmoitu Rust-kielellä. Toimii suoraan pakkauksesta, ei tarvitse asetusta. Hallitset täysin tietojasi, ei tarvitse murehtia turvallisuutta. Voit käyttää meidän rendezvous/relay-palvelinta, [aseta omasi](https://rustdesk.com/server), tai [kirjoittaa oma rendezvous/relay-palvelin](https://github.com/zoltan151/rustdesk-server-demo).
 
 RustDesk toivottaa avustukset tervetulleiksi kaikilta. Katso lisätietoja [`docs/CONTRIBUTING.md`](CONTRIBUTING.md) avun saamiseksi.
 
-[**BINAARILATAUS**](https://github.com/rustdesk/rustdesk/releases)
+[**BINAARILATAUS**](https://github.com/zoltan151/rustdesk/releases)
 
 ## Riippuvuudet
 
@@ -88,7 +88,7 @@ cd
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
-git clone https://github.com/rustdesk/rustdesk
+git clone https://github.com/zoltan151/rustdesk
 cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
@@ -101,7 +101,7 @@ VCPKG_ROOT=$HOME/vcpkg cargo run
 Aloita kloonaamalla tietovarasto ja rakentamalla docker-säiliö:
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone https://github.com/zoltan151/rustdesk
 cd rustdesk
 docker build -t "rustdesk-builder" .
 ```
@@ -128,14 +128,14 @@ Varmista, että suoritat näitä komentoja RustDesktop-tietovaraston juurihakemi
 
 ## Tiedostorakenne
 
-- **[libs/hbb_common](https://github.com/rustdesk/rustdesk/tree/master/libs/hbb_common)**: video codec, config, tcp/udp wrapper, protobuf, fs-funktiot tiedostosiirtoon, ja jotkut muut apuohjelmafunktiot
-- **[libs/scrap](https://github.com/rustdesk/rustdesk/tree/master/libs/scrap)**: näyttökaappaukset
-- **[libs/enigo](https://github.com/rustdesk/rustdesk/tree/master/libs/enigo)**: platform specific keyboard/mouse control
-- **[src/ui](https://github.com/rustdesk/rustdesk/tree/master/src/ui)**: Graafinen käyttöliittymä
-- **[src/server](https://github.com/rustdesk/rustdesk/tree/master/src/server)**: audio/clipboard/input/video services, and network connections
-- **[src/client.rs](https://github.com/rustdesk/rustdesk/tree/master/src/client.rs)**: start a peer connection
-- **[src/rendezvous_mediator.rs](https://github.com/rustdesk/rustdesk/tree/master/src/rendezvous_mediator.rs)**: Communicate with [rustdesk-server](https://github.com/rustdesk/rustdesk-server), wait for remote direct (TCP hole punching) or relayed connection
-- **[src/platform](https://github.com/rustdesk/rustdesk/tree/master/src/platform)**: platform specific code
+- **[libs/hbb_common](https://github.com/zoltan151/rustdesk/tree/master/libs/hbb_common)**: video codec, config, tcp/udp wrapper, protobuf, fs-funktiot tiedostosiirtoon, ja jotkut muut apuohjelmafunktiot
+- **[libs/scrap](https://github.com/zoltan151/rustdesk/tree/master/libs/scrap)**: näyttökaappaukset
+- **[libs/enigo](https://github.com/zoltan151/rustdesk/tree/master/libs/enigo)**: platform specific keyboard/mouse control
+- **[src/ui](https://github.com/zoltan151/rustdesk/tree/master/src/ui)**: Graafinen käyttöliittymä
+- **[src/server](https://github.com/zoltan151/rustdesk/tree/master/src/server)**: audio/clipboard/input/video services, and network connections
+- **[src/client.rs](https://github.com/zoltan151/rustdesk/tree/master/src/client.rs)**: start a peer connection
+- **[src/rendezvous_mediator.rs](https://github.com/zoltan151/rustdesk/tree/master/src/rendezvous_mediator.rs)**: Communicate with [rustdesk-server](https://github.com/zoltan151/rustdesk-server), wait for remote direct (TCP hole punching) or relayed connection
+- **[src/platform](https://github.com/zoltan151/rustdesk/tree/master/src/platform)**: platform specific code
 
 ## Tilannekuvat
 
