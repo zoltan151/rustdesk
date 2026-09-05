@@ -939,6 +939,13 @@ pub fn is_modifier(evt: &KeyEvent) -> bool {
 }
 
 pub fn check_software_update() {
+    // Fail-closed: no api.rustdesk.com phone-home unless explicitly enabled for InfoTech.
+    let enabled = std::env::var("INFOTECH_RUSTDESK_UPDATE_CHECK")
+        .map(|v| v == "1")
+        .unwrap_or(false);
+    if !enabled {
+        return;
+    }
     if is_custom_client() {
         return;
     }
