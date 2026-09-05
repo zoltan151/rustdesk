@@ -118,6 +118,13 @@ fn start_auto_update_check_(rx_msg: Receiver<UpdateMsg>) {
 }
 
 fn check_update(manually: bool) -> ResultType<()> {
+    // Fail-closed unless InfoTech explicitly enables upstream version checks.
+    let enabled = std::env::var("INFOTECH_RUSTDESK_UPDATE_CHECK")
+        .map(|v| v == "1")
+        .unwrap_or(false);
+    if !enabled {
+        return Ok(());
+    }
     #[cfg(target_os = "windows")]
     let update_msi = crate::platform::is_msi_installed()? && !crate::is_custom_client();
     if !(manually || config::Config::get_bool_option(config::keys::OPTION_ALLOW_AUTO_UPDATE)) {
